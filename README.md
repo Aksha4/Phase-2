@@ -1,14 +1,118 @@
-# Week 1 Project
+# Backend Development Project
 
-My first backend project using Node.js.
+## Overview
 
-## How to Run
+This project is a Node.js and Express backend application developed as part of the backend development syllabus.
 
-1. Open terminal
-2. Run:
+## Features
 
+- Express.js server
+- SQLite database
+- User registration
+- User login
+- Password hashing with bcryptjs
+- JWT authentication
+- Protected API routes
+- Request logging
+- Environment variables using dotenv
+
+## Technologies Used
+
+- Node.js
+- Express.js
+- SQLite3
+- bcryptjs
+- jsonwebtoken
+- dotenv
+
+## Installation
+
+1. Clone the repository.
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Create a `.env` file:
+
+```env
+PORT=3000
+JWT_SECRET=your_secret_key
+```
+
+4. Run the migration:
+
+```bash
+node src/migrations/migrate.js
+```
+
+5. Start the server:
+
+```bash
 node app.js
+```
 
-3. Open browser:
+## API Endpoints
 
-http://localhost:3000
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | / | Home |
+| GET | /about | About |
+| GET | /contact | Contact |
+| GET | /health | Health Check |
+| POST | /api/auth/register | Register User |
+| POST | /api/auth/login | Login User |
+| GET | /api/auth/profile | Protected Profile |
+
+## Authentication
+
+Protected endpoints require an Authorization header:
+
+```
+Authorization: Bearer <JWT_TOKEN>
+```
+
+## Product API
+
+The application provides CRUD operations for products.
+
+### Create Product
+
+**POST** `/api/products`
+
+### Get All Products
+
+**GET** `/api/products`
+
+### Get Product By ID
+
+**GET** `/api/products/:id`
+
+### Update Product
+
+**PUT** `/api/products/:id`
+
+### Delete Product
+
+**DELETE** `/api/products/:id`
+
+## Authentication
+
+All Product API endpoints are protected using JWT authentication.
+
+Include the following header when accessing protected routes:
+
+```text
+Authorization: Bearer <JWT_TOKEN>
+```
+
+## Technologies Used
+
+- Node.js
+- Express.js
+- SQLite3
+- JWT (jsonwebtoken)
+- bcryptjs
+- dotenv
+- Thunder Client
