@@ -116,3 +116,48 @@ Authorization: Bearer <JWT_TOKEN>
 - bcryptjs
 - dotenv
 - Thunder Client
+
+## Week 6 Product API Features
+
+### Product Validation
+
+Product creation and updates validate:
+
+- Product name is required.
+- Price must be a positive number.
+
+Invalid requests return HTTP 400 responses.
+
+### Product Search
+
+Search products by name:
+
+GET /api/products/search?name=keyboard
+
+Requires JWT authentication.
+
+### Product Pagination
+
+Retrieve products using pagination:
+
+GET /api/products/page?page=1&limit=5
+
+Parameters:
+
+- `page` - Page number
+- `limit` - Number of products per page
+
+Example:
+
+GET /api/products/page?page=1&limit=2
+
+Requires JWT authentication.
+
+### Week 6 Testing
+
+The following features were tested using Thunder Client:
+
+- Product validation
+- Product search
+- Product pagination
+- JWT authentication
