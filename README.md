@@ -58,3 +58,46 @@ User
  | many
  ↓
 Products
+## Week 8 — Performance Telemetry & Stress Testing
+
+### Overview
+
+Week 8 adds performance telemetry, asynchronous worker processing,
+stress-burst testing, Prometheus-compatible metrics, and a responsive
+system performance dashboard.
+
+### Features
+
+- Prometheus `/metrics` endpoint
+- HTTP request counter and duration metrics
+- Asynchronous high-frequency event worker
+- JSON application log processing
+- Worker queue-size monitoring
+- Worker processing-duration metrics
+- Stress-test latency metrics
+- Peak stress latency monitoring
+- Responsive telemetry dashboard
+- Simulated 100-event stress burst
+
+### Telemetry Dashboard
+
+Open:
+
+http://localhost:3000/telemetry.html
+
+The dashboard displays:
+
+- Worker events
+- Peak stress latency
+- Memory usage
+- Queue size
+- Stress-test latency time series
+- Worker processing time
+- Telemetry connection status
+
+### Stress Test
+
+The stress test endpoint accepts a configurable event count:
+
+```text
+POST /api/stress-test
